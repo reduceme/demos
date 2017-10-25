@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Hero} from './hero'
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,11 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
-  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
-  myHero = "Windstorm";
+  heroes = [
+    new Hero(1, "aa"),
+    new Hero(2, "ba"),
+    new Hero(3, "ca"),
+    new Hero(4, "da"),
+  ];
+  myHero = this.heroes[0];
 }

@@ -3,6 +3,7 @@
 <p>Heroes:</p>
 <ul>
   <li *ngFor="let hero of heroes">
-    {{hero}}
+    {{hero.id}}: {{hero.name}}
   </li>
 </ul>
+<p *ngIf="heroes.length > 3">there are many heroes</p>
