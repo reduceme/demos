@@ -1,7 +1,7 @@
-<h2>My Heroes</h2>
+<!--<h2>My Heroes</h2>
 <ul class="heroes">
   <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <!--each hero goes here-->
+    &lt;!&ndash;each hero goes here&ndash;&gt;
     <span class="badge">{{hero.id}}</span>{{hero.name}}
   </li>
 </ul>
@@ -13,6 +13,7 @@
     <label>name: </label>
     <input [(ngModel)]="selectedHero.name" placeholder="name"/>
   </div>
-</div>
+</div>-->
 
+<hero-detail [hero]="selectedHero"></hero-detail>
 
