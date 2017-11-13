@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Require Demo</title>
+    <link rel="stylesheet" href="../assets/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>Require Demo</h1>
+        <button id="contentBtn" class="btn btn-default">Click me</button>
+        <p id="messagebox"></p>
+
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="dateTimePicker" placeholder="请选择时间">
+            </div>
+
+            <div class="form-group">
+                <input type="file" class="form-control file" id="fileinput" placeholder="fileinput"
+                       data-show-preview="false">
+            </div>
+        </form>
+
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <td>#</td>
+                    <td>userId</td>
+                    <td>userName</td>
+                    <td>age</td>
+                    <td>birthday</td>
+                    <td>nation</td>
+                    <td>sex</td>
+                </tr>
+                </thead>
+                <tbody id="userList">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--每个界面都会用到的-->
+<script src="../assets/lib/jquery.min.js"></script>
+<script src="../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../assets/lib/artTemplate.js"></script>
+
+<!--data-main里面配置require.config()-->
+<script src="../assets/lib/require.js" data-main="../assets/app/index" type="text/javascript"></script>
+
+<script type="text/html" id="userTemplate">
+    {{each data as value index}}
+    <tr>
+        <td>{{index+1}}</td>
+        <td>{{value.userId}}</td>
+        <td>{{value.userName}}</td>
+        <td>{{value.age}}</td>
+        <td>{{value.birthday}}</td>
+        <td>{{value.nation}}</td>
+        <td>{{value.sex}}</td>
+    </tr>
+    {{/each}}
+</script>
+</body>
+</html>
