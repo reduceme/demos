@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>R1 Demos</title>
+    <link rel="stylesheet" href="./assets/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>R1 Demos</h1>
+        <button id="contentBtn" class="btn btn-default">Click me</button>
+        <p id="messagebox"></p>
+
+        <form class="form-inline">
+            <!--时间插件-->
+            <div class="form-group">
+                <input type="text" class="form-control" id="dateTimePicker" placeholder="请选择时间">
+            </div>
+
+            <!--文件上传-->
+            <div class="form-group">
+                <input type="file" class="form-control file" id="fileinput" placeholder="fileinput"
+                       data-show-preview="false">
+            </div>
+        </form>
+
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <td>#</td>
+                    <td>userId</td>
+                    <td>userName</td>
+                    <td>age</td>
+                    <td>birthday</td>
+                    <td>nation</td>
+                    <td>sex</td>
+                </tr>
+                </thead>
+                <!--模板引擎装载的地方-->
+                <tbody id="userList">
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div>
+            <table id="mmg" class="mmg">
+                <tr>
+                    <th rowspan="" colspan=""></th>
+                </tr>
+            </table>
+            <div id="pg" style="text-align: right;"></div>
+        </div>
+
+        <!--省市联动-->
+        <form class="form-inline">
+            <div class="form-group">
+                <select id="province" name="province" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <select id="city" name="city" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <select id="area" name="area" class="form-control"></select>
+            </div>
+        </form>
+
+        <form class="form-inline">
+            <div class="form-group">
+                <select id="select1" name="province" class="form-control selectpicker">
+                    <option>1白毛浮绿水</option>
+                    <option>2白毛浮绿水</option>
+                    <option>3白毛浮绿水</option>
+                    <option>4白毛浮绿水</option>
+                    <option>5白毛浮绿水</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="select2" name="city" class="selectpicker show-tick form-control" multiple>
+                    <option value="0">苹果</option>
+                    <option value="1">菠萝</option>
+                    <option value="2">香蕉</option>
+                    <option value="3">火龙果</option>
+                    <option value="4">梨子</option>
+                    <option value="5">草莓</option>
+                    <option value="6">哈密瓜</option>
+                    <option value="7">椰子</option>
+                    <option value="8">猕猴桃</option>
+                    <option value="9">桃子</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select id="select3" name="area" class="form-control selectpicker"></select>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<!--时间选择器-->
+<link rel="stylesheet" href="assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+<script src="assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+<!--文件上传-->
+<link rel="stylesheet" href="assets/bootstrap-fileinput/css/fileinput.css">
+<script src="assets/bootstrap-fileinput/js/fileinput.min.js"></script>
+
+<!--模板引擎-->
+<script src="assets/artTemplate.js"></script>
+
+<!--下拉框插件-->
+<link rel="stylesheet" href="assets/bootstrap-select/css/bootstrap-select.min.css">
+<script src="assets/bootstrap-select/js/bootstrap-select.min.js"></script>
+<!--中文-->
+<script src="assets/bootstrap-select/js/i18n/defaults-zh_CN.min.js"></script>
+
+<!--自己写的模板，用于渲染-->
+<script type="text/html" id="userTemplate">
+    {{each data as value index}}
+    <tr>
+        <td>{{index+1}}</td>
+        <td>{{value.userId}}</td>
+        <td>{{value.userName}}</td>
+        <td>{{value.age}}</td>
+        <td>{{value.birthday}}</td>
+        <td>{{value.nation}}</td>
+        <td>{{value.sex}}</td>
+    </tr>
+    {{/each}}
+</script>
+
+<!--省市联动-->
+<script src="assets/area.js"></script>
+
+<!--表格-->
+<link rel="stylesheet" href="assets/mmGrid/src/mmGrid.css">
+<link rel="stylesheet" href="assets/mmGrid/src/theme/bootstrap/mmGrid-bootstrap.css">
+<link rel="stylesheet" href="assets/mmGrid/src/mmPaginator.css">
+<link rel="stylesheet" href="assets/mmGrid/src/theme/bootstrap/mmPaginator-bootstrap.css">
+<script src="assets/mmGrid/src/mmGrid.js"></script>
+<script src="assets/mmGrid/src/mmPaginator.js"></script>
+<!--文件js-->
+<script src="js/index.js"></script>
+</html>
