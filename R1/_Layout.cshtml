@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="/Content/image/favicon.ico" />
+    <script type="text/javascript" src="/Content/script/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Content/script/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/Content/script/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--母版页-->
+    <link rel="stylesheet" href="/Content/css/layout.css">
+
+    <!--时间选择器-->
+    <!--<link rel="stylesheet" href="/Content/script/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">-->
+    <!--<script src="/Content/script/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>-->
+
+    <!--下拉框-->
+    <!--<link rel="stylesheet" href="/Content/script/bootstrap-select/css/bootstrap-select.min.css">-->
+    <!--<script rel="stylesheet" href="/Content/script/bootstrap-select/js/bootstrap-select.min.js"></script>-->
+    <!--<script rel="stylesheet" href="/Content/script/bootstrap-select/js/defaults-zh_CN.min.js"></script>-->
+
+    <!--模板引擎-->
+    <script src="/Content/script/artTemplate.js"></script>
+
+    <!--表格-->
+    <!--<link rel="stylesheet" href="/Content/script/mmGrid/mmGrid.css">-->
+    <!--<link rel="stylesheet" href="/Content/script/mmGrid/theme/bootstrap/mmGrid-bootstrap.css">-->
+    <!--<link rel="stylesheet" href="/Content/script/mmGrid/mmPaginator.css">-->
+    <!--<link rel="stylesheet" href="/Content/script/mmGrid/theme/bootstrap/mmPaginator-bootstrap.css">-->
+    <!--<script src="/Content/script/mmGrid/mmGrid.js"></script>-->
+    <!--<script src="/Content/script/mmGrid/mmPaginator.js"></script>-->
+
+    <!--图标文件-->
+    <!--<link rel="stylesheet" href="/Content/script/Font-Awesome-3.2.1/css/font-awesome.css">-->
+</head>
+<body>
+
+<script>
+    //后端传递给前端的全局变量，前端开发人员请勿修改
+    var pageInfo = {};
+    pageInfo.loginStaff = eval(@Html.Raw(ViewBag.StaffStr));
+    pageInfo.menuTreeList = eval(@Html.Raw(ViewBag.MenuStr == null ? "null" : ViewBag.MenuStr + ""));
+</script>
+
+<header>
+    <img class="logo-img" src="/Content/image/logo.png"/>
+    <strong>语言桥在线项目流程管理系统</strong>
+    <small>Lan-bridge online project process management system</small>
+    <ul>
+        <li><i class="glyphicon glyphicon-cog" aria-hidden="true"></i>管理中心</li>
+        <li><i class="glyphicon glyphicon-question-sign" aria-hidden="true"></i>使用帮助</li>
+        <li><i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>更新日志</li>
+        <li><i class="glyphicon glyphicon-user" aria-hidden="true"></i>个人中心</li>
+        <li><i class="glyphicon glyphicon-off" aria-hidden="true"></i><span class="logout"></span></li>
+    </ul>
+</header>
+<div style="clear: both; height: 100%">
+    <div class="sidebar">
+        <ul class="sidebar-trans" id="parentSidebar">
+        </ul>
+
+        <div id="closeBtn">
+            <
+        </div>
+    </div>
+
+    <div class="_content">
+        @RenderBody()
+    </div>
+    <div style="clear:both"></div>
+</div>
+    <!-- 提 示 madul-->
+    <div class="l_madul" id="Prompt_modal">
+        <div class="l_madul_content" >
+            <div class="l_madul_heade" id="Prompt_modal_heade">
+                <a class="Prompt_modal_close">X</a>
+                <h4 class="modal-title" style="text-align:center;"> 提 示 </h4>
+            </div>
+            <div class="l_madul_bady">
+                <div class="mmgrid-container">
+                    <p id="Prompt_text" style="text-align:center;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!--一级菜单导航-->
+<script type="text/html" id="sidebar">
+    {{each parentGroup as value index}}
+    <li class="nav-item side-item" data-index="{{index}}" data-parent-menuid="{{value.MenuID}}">
+        <a class="nav-item-a">
+            <div class="nav-icon">
+                <span class="{{value.Icon}}"></span>
+            </div>
+            <span class="nav-title">{{value.Name}}</span>
+        </a>
+
+        <div class="view-content">
+            <ul class="nav-item-ul" id="childSidebar{{index}}">
+            </ul>
+        </div>
+    </li>
+    {{/each}}
+</script>
+
+<!--二级菜单导航-->
+<script type="text/html" id="childSidebarTemplate">
+    {{each list as value index}}
+    <li class="inner-item inner-li{{index}}" data-child-menuid="{{value.MenuID}}">
+        <a href="{{value.Url}}">
+            <span class="slide-title">{{value.Name}}</span>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+<!--母版页js-->
+<script type="text/javascript" src="../../Content/script/_Layout.js"></script>

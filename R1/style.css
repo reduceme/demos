@@ -1,0 +1,323 @@
+/*浮动*/
+.f_left{float:left!important;}
+.f_right{float:right!important;}
+/*单选框居中*/
+input[type=radio]{margin:0;vertical-align:middle;}
+
+/*页面的顶部查询条件的ul样式*/
+.nav-condition {
+    /*width: calc(100% - 60px);*/
+    width: calc(100%);
+    height: auto;
+    min-height: 30px;
+    /*min-width: 900px;*/
+}
+
+/* 顶部查询 的上面有导航栏时需要*/
+.nav_something {
+    margin-top: 10px;
+}
+
+/*顶部ul里面的li样式*/
+.nav-condition-li {
+    float: left;
+    display: block;
+    margin-right: 10px;
+}
+.nav-condition-li_left{margin-bottom:10px;}
+.nav-condition-li.f_right{
+    margin-right:0;
+}
+/*顶部查询条件的输入框*/
+.search-input {
+    display:inline-block;
+    width: 150px;
+    vertical-align:middle;
+}
+
+/*蓝色的操作按钮*/
+.btn-search {
+    background: #2673C0;
+    color: #fff;
+}
+
+/*蓝色操作按钮的hover事件*/
+.btn-search:hover {
+    color: #fff;
+    filter: alpha(Opacity=80);
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+}
+
+/*顶部类似蓝色按钮的筛选条件*/
+.btn-select {
+    background: #fff;
+    color: #2673C0;
+    border-color: #2673C0;
+}
+/*顶部类似蓝色按钮的筛选条件，默认隐藏，在对应页面才显示，作用于partialTabMenu页面所提的组件*/
+.task_tap_displaynone{display:none;}
+/*.task_tap_displaynone:active{display:inline-block;}*/
+
+/*顶部类似蓝色按钮的筛选条件的hover事件*/
+.btn-select:hover {
+    color: #2673C0;
+    filter: alpha(Opacity=80);
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+}
+
+.btn-select.active {
+    background: #2673C0;
+    color: #fff;
+    border-color: #2673C0;
+}
+
+/*解决bootstrap的btn样式冲突*/
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus{outline:none;}
+.btn-search:focus {
+    color: #fff;
+}
+
+/*把所有的时间选择框的背景颜色都设置为白色*/
+.form_datetime {
+    background: #fff;
+}
+
+/*表格的容器*/
+.mmgrid-container {
+    margin-top: 10px;
+}
+
+/*顶部导航时间选择框*/
+.time-select {
+    display: inline-block;
+    width: 150px;
+    background-color: #fff;
+}
+
+.radio {
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-bottom: 1px;
+}
+
+/*列表的上部导航栏*/
+.Upper_navigation_bar {
+    /*height:calc(100%);*/
+    min-height:40px;
+    text-align:right;
+    background: #dbdbdb;
+    background: -webkit-linear-gradient(270deg, rgba(248, 248, 248, 1) 0%, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 41%, rgba(219, 219, 219, 1) 100%, rgba(219, 219, 219, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(248, 248, 248, 1) 0%, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 41%, rgba(219, 219, 219, 1) 100%, rgba(219, 219, 219, 1) 100%);
+    background: linear-gradient(180deg, rgba(248, 248, 248, 1) 0%, rgba(248, 248, 248, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 41%, rgba(219, 219, 219, 1) 100%, rgba(219, 219, 219, 1) 100%);
+    border: 1px solid #cdcdcd;
+}
+.Upper_navigation_bar_left{
+    float:left;
+    height:38px;
+    line-height:36px;
+}
+.Upper_navigation_bar_right{
+    display:inline-block;
+    height:38px;
+    line-height:36px;
+}
+/*列表的上部导航栏 里面a标签样式*/
+.Upper_navigation_bar_a {
+    display: inline-block;
+    float:left;
+    height: 38px;
+    line-height:34px;
+    text-align: center;
+    width: 100px;
+    color: #464646;
+    text-decoration: none;
+    border-right: 1px solid #cdcdcd;
+    border-top: 3px solid transparent;
+}
+
+.Upper_navigation_bar_a:hover, .Upper_navigation_bar_a.active:focus {
+    color: #B00942;
+    text-decoration: none;
+    border-top: 3px solid #b00942;
+}
+
+.Upper_navigation_bar_a.active {
+    color: #B00942;
+    border-top: 3px solid #b00942;
+}
+
+/*bootstrap样式冲突*/
+.modal-content {
+    border-radius: 0px;
+}
+
+.modal-header {
+    padding: 10px;
+}
+
+.modal-title {
+    font-size: 15px;
+}
+
+/*模态框中的表格*/
+.modal-table-tr {
+    height: 32px;
+}
+
+/*模态框-3列表格（标题+内容为1列），下同*/
+.modal-three-td-title {
+    width: 15%;
+}
+
+.modal-three-td-content {
+    padding: 0 2px;
+    width: 17%;
+}
+.modal-one-td-title {
+    width: 30%;
+}
+
+.modal-one-td-content {
+    padding: 0 2px;
+    width: 70%;
+}
+
+/*模态框输入框-后面有单位*/
+.modal-input-unit {
+    border: 1px solid #fff;
+    padding: 0 5px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.modal-input-unit-width {
+    width: 83%;
+}
+/*模态框中的textarea，默认宽度100%，不允许左右拖动，可上下拖动*/
+.modal-table-tr textarea{
+    resize:vertical;
+    min-height:80px;
+}
+.modal-input-unit:focus {
+}
+
+/*模态框表格title的span*/
+.modal-title-span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #B00942;
+    padding-top: 5px;
+}
+
+/* 弹框 提交按钮样式/禁用样式 */
+.Bomb_Submit {
+    background: #b00942;
+    background: -webkit-linear-gradient(270deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    background: linear-gradient(180deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    color: #fff;
+    width: 96px;
+}
+
+.Bomb_Submit:hover {
+    color: #fff;
+    filter: alpha(Opacity=80);
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+}
+
+.Bomb_Submit:active {
+    background: #b00942;
+    background: -webkit-linear-gradient(270deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    background: linear-gradient(180deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    color: #fff;
+}
+
+.Bomb_Submit:focus {
+    color: #fff;
+}
+
+.Bomb_Submit_diss {
+    width: 96px;
+    background: rgb(221, 221, 221);
+    color: rgb(51, 51, 51);
+}
+
+/* 弹框 表格标题样式 */
+.Table_Caption {
+    text-align: center;
+    background: #f6f6f6;
+    border: 1px solid #d2d2d2;
+    font-weight: bold;
+}
+
+/* 自定义弹框样式*/
+.l_madul {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.l_madul_content {
+    width: 300px;
+    min-height: 100px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    border: 1px solid rgba(0, 0, 0, .2);
+    background: #fff;
+    margin-top: 96px;
+    margin-left: 50%;
+    position: relative;
+    transform: translate(-50%, 0);
+}
+
+.l_madul_heade {
+    background: #b00942;
+    background: -webkit-linear-gradient(270deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    background: -moz-linear-gradient(180deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    background: linear-gradient(180deg, rgba(201, 10, 74, 1) 0%, rgba(201, 10, 74, 1) 0%, rgba(176, 9, 66, 1) 100%, rgba(176, 9, 66, 1) 100%);
+    color: #fff;
+    height: 40px;
+    padding: 8px;
+}
+
+.l_madul_heade_d {
+    background: #5bc0de;
+    color: #fff;
+    height: 40px;
+    padding: 8px;
+}
+
+.l_madul_bady {
+    padding: 15px;
+}
+
+.l_madul_foot {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    text-align:right;
+}
+
+.Prompt_modal_close {
+    float: right;
+    color: #fff;
+    cursor: pointer;
+}
+.Prompt_modal_close:hover {
+    color: #fff;
+}
