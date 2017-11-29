@@ -57,7 +57,7 @@ function formatTime(){
 
 //获取URL参数，并返回对象
 function GetRequest() {
-    var url = decodeURI(decodeURI(location.search)); //获取url中"?"符后的字串，使用了两次decodeRUI解码
+    var url = decodeURI(decodeURI(location.search)); //获取url中"?"符后的字串，使用了两次decodeRUI解码可以避免url传递中文参数乱码的问题
     var theRequest = new Object();
     if (url.indexOf("?") != -1) {
         var str = url.substr(1);
