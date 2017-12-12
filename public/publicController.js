@@ -184,3 +184,31 @@ function objGroupByKey(){
 	var action = throttle(doInput, 1000);
 	$('#txt').on('keyup', action);
 })()
+
+/**
+ * 获取每月有多少天
+ */
+function getDaysNum(year, month){
+	month = parseInt(month, 10);
+	return new Date(year, month, 0).getDate();
+}
+
+/**
+ * 获取每月第一天是星期几，0代表星期天，1代表星期一，以此类推
+ */
+function getDayOfWeek(year, month){
+		month = parseInt(month, 10) - 1;
+	return new Date(year, month).getDay();
+}
+
+/**
+ * 质朴长存法。算法永远都是如此，要不是时间换空间，要不就是空间换时间。
+ */
+function pad(num, n){
+	var len = parseInt(num, 10).toString().length;
+	while(len < n){
+		num = "0" + num;
+		len++;
+	}
+	return num;
+}
