@@ -103,3 +103,28 @@ function objDelRepeat(data){
 	
 	return data;
 }
+
+//对象分组
+function objGroupByKey(){
+	var map = {},
+    dest = [];
+	for(var i = 0; i < arr.length; i++){
+		var ai = arr[i];
+		if(!map[ai.id]){
+			dest.push({
+				id: ai.id,
+				name: ai.name,
+				data: [ai]
+			});
+			map[ai.id] = ai;
+		}else{
+			for(var j = 0; j < dest.length; j++){
+				var dj = dest[j];
+				if(dj.id === ai.id){
+					dj.data.push(ai);
+					break;
+				}
+			}
+		}
+	}
+}
