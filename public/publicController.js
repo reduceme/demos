@@ -128,3 +128,59 @@ function objGroupByKey(){
 		}
 	}
 }
+
+//函数去抖动，使用场景：函数防抖就是让某个函数在上一次执行后，满足等待某个时间内不再触发此函数后再执行，而在这个等待时间内再次触发此函数，等待时间会重新计算
+(function(){
+	/**
+	 * 函数防抖
+	 * @param  {Function} 调用的函数
+	 * @param  {Int}      时间，单位毫秒
+	 * @return {Function} 返回客户调用函数
+	 */
+	var debounce = function(action, time) {
+		var timer = null;
+		return function() {
+			var context = this,
+				args = arguments;
+
+			clearTimeout(timer);
+			timer = setTimeout(function() {
+				action.apply(context, args);
+			}, time);
+		};
+	};
+
+	function doResize() {
+		console.log(arguments);
+	}
+
+	var action = debounce(doResize, 500);
+	$(window).on('resize', action);
+})
+
+//函数节流，使用场景：每间隔某个时间去执行某函数，避免函数的过多执行
+(function(){
+	/**
+	 * 函数节流
+	 * @param  {Function} 调用的函数
+	 * @param  {Int}      时间，单位毫秒
+	 * @return {Function} 返回客户调用函数
+	 */
+	var throttle = function(action, delay) {
+		var last = 0;
+		return function() {
+			var curr = +new Date();
+			if (curr - last > delay) {
+				action.apply(this, arguments);
+				last = curr;
+			}
+		};
+	}
+
+	function doInput() {
+		console.log($(this).val());
+	}
+
+	var action = throttle(doInput, 1000);
+	$('#txt').on('keyup', action);
+})()
