@@ -24,7 +24,7 @@
         render: function () {
             var text = this.state.liked ? "like" : "haven\'t liked";
             return (
-                    <p onClick="this.handleClick">
+                    <p onClick={this.handleClick}>
                         You {text} this. Click to toggle.
                     </p>
             )

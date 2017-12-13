@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+</body>
+<!--组件的生命周期-->
+<script type="text/babel">
+    var Hello = React.createClass({
+        getInitialState: function () {
+            return {
+                opacity: 1.0
+            }
+        },
+
+        componentDidMount: function () {
+            this.timer = setInterval(function () {
+                var opacity = this.state.opacity;
+                opacity -= 0.5;
+                if (opacity < 0.1) {
+                    opacity = 1.0;
+                }
+                this.setState({
+                    opacity: opacity
+                });
+            }.bind(this), 100)
+        },
+
+        render: function () {
+            return (
+                    <div style={{opacity: this.state.opacity}}>
+                        Hello {this.props.name}
+                    </div>
+            )
+        }
+    });
+
+    ReactDOM.render(
+        <Hello name="world"/>,
+        document.getElementById("example")
+    )
+</script>
+</html>
