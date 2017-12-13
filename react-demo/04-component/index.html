@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+    <style>
+        .test{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="example"></div>
+</body>
+<!--react组件-->
+<script type="text/babel">
+    var HelloMessage = React.createClass({
+        render: function () {
+            return <h1 className="test">hello {this.props.name}</h1>
+        }
+    });
+
+    ReactDOM.render(
+        <HelloMessage name="jone"/>,
+        document.getElementById("example")
+    )
+</script>
+</html>

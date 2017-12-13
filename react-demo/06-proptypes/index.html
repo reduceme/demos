@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+    <style>
+        .test {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="example"></div>
+</body>
+<!--验证组件实例的属性是否符合要求-->
+<script type="text/babel">
+    /*var data = 123;
+
+    var MyTitle = React.createClass({
+        propTypes: {
+            title: React.PropTypes.string.isRequired,
+        },
+
+        render: function () {
+            return <h1>{this.props.title}</h1>
+        }
+    });
+
+    ReactDOM.render(
+        <MyTitle title={data}/>,
+        document.getElementById("example")
+    )*/
+
+    //getDefaultProps设置默认属性
+    var MyTitle = React.createClass({
+        getDefaultProps : function () {
+            return {
+                title : 'Hello World'
+            };
+        },
+
+        render: function() {
+            return <h1> {this.props.title} </h1>;
+        }
+    });
+
+    ReactDOM.render(
+            <MyTitle />,
+        document.getElementById("example")
+    );
+</script>
+</html>

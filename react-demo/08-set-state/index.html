@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+</body>
+<!--随着用户互动而产生变化的特性-->
+<script type="text/babel">
+    var LikeButton = React.createClass({
+        getInitialState: function () {
+            return {liked: false}
+        },
+        handleClick: function (event) {
+            this.setState({
+                liked: !this.state.liked
+            });
+        },
+        render: function () {
+            var text = this.state.liked ? "like" : "haven\'t liked";
+            return (
+                    <p onClick="this.handleClick">
+                        You {text} this. Click to toggle.
+                    </p>
+            )
+        }
+    });
+
+    ReactDOM.render(
+        <LikeButton/>,
+        document.getElementById("example")
+    )
+</script>
+</html>

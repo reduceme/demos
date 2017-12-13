@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+</body>
+<!--jsx语法中的变量-->
+<script type="text/babel">
+    var arr = [
+        <h1 key="1">hello, world!</h1>,
+        <h2 key="2">react is awesome!</h2>
+    ];
+
+    ReactDOM.render(
+            <div>{arr}</div>,
+        document.getElementById("example")
+    )
+</script>
+</html>

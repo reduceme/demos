@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+    <style>
+        .test {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="example"></div>
+</body>
+<!--组件的所有子节点，class换成className，for换成htmlFor-->
+<script type="text/babel">
+    var NodesList = React.createClass({
+        render: function () {
+            return (
+                    <ol>
+                        {
+                            React.Children.map(this.props.children, function (child) {
+                                return <li>{child}</li>
+                            })
+                        }
+                    </ol>
+            )
+        }
+    });
+
+    ReactDOM.render(
+            <NodesList>
+                <span>hello</span>
+                <span>world</span>
+            </NodesList>,
+        document.getElementById("example")
+    )
+</script>
+</html>
