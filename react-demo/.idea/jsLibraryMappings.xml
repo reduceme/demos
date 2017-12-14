@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="PROJECT" libraries="{react-DefinitelyTyped, react-addons-create-fragment-DefinitelyTyped, react-addons-css-transition-group-DefinitelyTyped, react-app-DefinitelyTyped, react-bootstrap-DefinitelyTyped, react-color-DefinitelyTyped, react-native-DefinitelyTyped, react-redux-DefinitelyTyped, react-router-DefinitelyTyped}" />
+  </component>
+</project>

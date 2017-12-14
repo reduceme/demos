@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>make the wheel</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+    <script src="../src/jquery.min.js"></script>
+    <!--<script src="makeWheel.js"></script>-->
+</head>
+<style>
+    #content {
+        width: 800px;
+        margin: 0 auto;
+        padding: 5px 10px;
+        background-color: #eee;
+    }
+
+    .commentBox h1 {
+        background-color: #bbb;
+    }
+
+    .commentList {
+        border: 1px solid yellow;
+        padding: 10px;
+    }
+
+    .commentList .comment {
+        border: 1px solid #bbb;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    .commentList .commentAuthor {
+        font-size: 20px;
+    }
+
+    .commentForm {
+        margin-top: 20px;
+        border: 1px solid red;
+        padding: 10px;
+    }
+
+    .commentForm textarea {
+        width: 100%;
+        height: 50px;
+        margin: 10px 0 10px 2px;
+    }
+</style>
+<body>
+<div id="content"></div>
+</body>
+<script type="text/babel">
+    var staticData = [
+        {author: "张飞", text: "我在写一条评论~！"},
+        {author: "关羽", text: "2货，都知道你在写的是一条评论。。"},
+        {author: "刘备", text: "哎，咋跟这俩逗逼结拜了！"}
+    ];
+
+    var Comment = React.createClass({
+        render: function () {
+            return (
+                    <div className="comment">
+                        <h2 className="commentAuthor">
+                            {this.props.author}:
+                        </h2>
+                    </div>
+            );
+        }
+    });
+
+    var CommentList = React.createClass({
+        render: function () {
+            var commentNodes = this.props.data.map(function (item) {
+                return (
+                        <Comment author={item.author}>
+                        </Comment>
+                )
+            })
+
+            return (
+                    <div className="commentList">
+                        {commentNodes}
+                    </div>
+            )
+        }
+    });
+
+    var CommentBox = React.createClass({
+        loadCommentsFromServer: function () {
+            this.setState({data: staticData});
+        },
+        //初始化
+        getInitialState: function () {
+            return {data: []}
+        },
+        //组件添加时运行
+        componentDidMount: function () {
+            this.loadCommentsFromServer();
+        },
+        render: function () {
+            return (
+                    <div className="commentBox">
+                        <h1>Comments</h1>
+                        <CommentList data={this.state.data}/>
+                    </div>
+            )
+        }
+    });
+
+    ReactDOM.render(
+            <CommentBox url="comments.json" pollInterval="2000"/>,
+        document.getElementById("content")
+    );
+</script>
+</html>
