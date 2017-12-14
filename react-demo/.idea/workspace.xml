@@ -30,10 +30,9 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/13-demos/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
-                  <caret line="152" column="25" lean-forward="false" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="25" />
+                <state relative-caret-position="169">
+                  <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="122" selection-end-column="46" />
                   <folding>
-                    <element signature="e#3751#4262#0" expanded="false" />
                     <element signature="e#4311#4599#0" expanded="false" />
                     <element signature="e#4659#4701#0" expanded="false" />
                     <element signature="e#4973#5026#0" expanded="false" />
@@ -49,8 +48,8 @@
           <file leaf-file-name="makeWheel.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/13-demos/makeWheel.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="675">
-                  <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+                <state relative-caret-position="309">
+                  <caret line="92" column="12" lean-forward="true" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -313,12 +312,12 @@
       <workItem from="1513219059567" duration="594000" />
       <workItem from="1513229389970" duration="594000" />
       <workItem from="1513230981380" duration="3226000" />
-      <workItem from="1513236975503" duration="6304000" />
+      <workItem from="1513236975503" duration="6581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25846000" />
+    <option name="totallyTimeSpent" value="26123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -359,7 +358,6 @@
         <state relative-caret-position="1386">
           <caret line="63" column="32" lean-forward="false" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
           <folding>
-            <element signature="e#3751#4262#0" expanded="false" />
             <element signature="e#4311#4599#0" expanded="false" />
             <element signature="e#4659#4701#0" expanded="false" />
             <element signature="e#4973#5026#0" expanded="false" />
@@ -609,10 +607,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/13-demos/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="152" column="25" lean-forward="false" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="25" />
+        <state relative-caret-position="169">
+          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="122" selection-end-column="46" />
           <folding>
-            <element signature="e#3751#4262#0" expanded="false" />
             <element signature="e#4311#4599#0" expanded="false" />
             <element signature="e#4659#4701#0" expanded="false" />
             <element signature="e#4973#5026#0" expanded="false" />
@@ -622,8 +619,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/13-demos/makeWheel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        <state relative-caret-position="309">
+          <caret line="92" column="12" lean-forward="true" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
           <folding />
         </state>
       </provider>

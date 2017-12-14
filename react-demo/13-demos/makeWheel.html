@@ -88,17 +88,17 @@
     });
 
     var CommentBox = React.createClass({
-        loadCommentsFromServer: function () {
+        /*loadCommentsFromServer: function () {
             this.setState({data: staticData});
-        },
+        },*/
         //初始化
         getInitialState: function () {
-            return {data: []}
+            return {data: staticData}
         },
         //组件添加时运行
-        componentDidMount: function () {
+        /*componentDidMount: function () {
             this.loadCommentsFromServer();
-        },
+        },*/
         render: function () {
             return (
                     <div className="commentBox">
