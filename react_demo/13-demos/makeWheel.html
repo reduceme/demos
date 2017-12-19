@@ -98,7 +98,7 @@
             if (!author || !text) {
                 return;
             }
-            this.props.onCommentSubmit({author: author, text: text});
+            this.props.onCommentSubmit({author: author, text: text}, e);
             this.refs.author.value = "";
             this.refs.text.value = "";
             return;
@@ -118,21 +118,24 @@
         loadCommentsFromServer: function () {
             this.setState({data: staticData});
         },
-        handleCommentSubmit: function (comment) {
+        handleCommentSubmit: function (comment, e) {
             //TODO: submit to the server and refresh the list
             var comments = this.state.data;
+            console.log(comment);
             var newComments = comments.concat([comment]);
 
             staticData = newComments;
 
             this.setState({data: newComments});
-            console.log(staticData);
+//            console.log(staticData);
+
+            console.log(e);
 
             /*this.setState({
                 data: e.target.value
             });*/
 
-            console.log(this.state.data);
+//            console.log(this.state.data);
         },
         //初始化
         getInitialState: function () {

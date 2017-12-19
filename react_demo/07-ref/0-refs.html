@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<!--从组件上获取真实的dom-->
+<script type="text/babel">
+    var FormApp = React.createClass({
+        getInitialState: function () {
+            return {
+                inputValue: "hello world"
+            }
+        },
+        handleChange: function (e) {
+            this.setState({
+                inputValue: e.target.value
+            })
+        },
+        handleSubmit: function (e) {
+            e.preventDefault();
+            console.log("submit......");
+
+            //使用refs获取input的值
+            console.log(
+                this.refs.myInput.value
+            );
+
+            /*this.setState({
+                inputValue: this.refs.myInput.value
+            });*/
+
+            console.log(this.state.inputValue);
+        },
+        render: function () {
+            return (
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" ref="myInput" onChange={this.handleChange} defaultValue={this.state.inputValue} />
+                        <button>提交</button>
+                    </form>
+            )
+        }
+    });
+
+    ReactDOM.render(
+            <FormApp />,
+        document.getElementById('app')
+    );
+</script>
+</html>
