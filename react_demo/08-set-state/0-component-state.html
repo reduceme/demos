@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+
+<script type="text/babel">
+    /**
+     * 注意点：
+     * 不要直接修改组件的state属性，它并不会立刻刷新。
+     * 使用 setState 进行数据更新
+     * */
+    var AppBox = React.createClass({
+        getInitialState: function () {
+            return {
+                clickCount: 0
+            }
+        },
+        handleClick: function (e) {
+            /*var newCount = Number(event.target.value) + 1;
+            this.setState({
+                clickCount: newCount
+            });*/
+            var newCount = this.state.clickCount + 1;
+            this.setState({
+                clickCount: newCount
+            })
+            console.log(this.state.clickCount);
+            console.log(newCount);
+        },
+        render: function () {
+            return (
+                    <div>
+//                        <button value={this.state.clickCount} onClick={this.handleClick}>点我</button>
+                        <button onClick={this.handleClick}>点我</button>
+                        <p>共点击了：{this.state.clickCount} 次</p>
+                    </div>
+            )
+        }
+    });
+
+    ReactDOM.render(
+            <AppBox/>,
+        document.getElementById("app")
+    )
+</script>
+</html>

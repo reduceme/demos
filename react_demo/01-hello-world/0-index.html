@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<script type="text/babel">
+    var AppBox = React.createClass({
+        handleClick: function () {
+            alert("不要点我。");
+        },
+        render: function () {
+            return (
+                <div>
+                    <h1>点下面</h1>
+                    <button onClick={this.handleClick}>点我</button>
+                </div>
+            )
+        }
+    });
+
+    ReactDOM.render(
+        <AppBox/>,
+        document.getElementById("app")
+    )
+</script>
+</html>

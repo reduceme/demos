@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<!--组件嵌套-->
+<script type="text/babel">
+    /**
+     * 注意点：
+     * 1、一个组件最多只能返回一个父标签，如果有多个需要，使用一个父标签包含起来
+     * 2、循环子组件需要给每个子组件赋值一个key
+     * */
+
+    var MessageBox = React.createClass({
+        render: function() {
+            var subMessageArr = [];
+            for (var i = 0; i < 10; i++) {
+                subMessageArr.push(
+                        <SubMessageBox key={'SubMsg' + i} />
+//                        <SubMessageBox/>
+                );
+            }
+
+            return (
+                    <div>
+                        <h1>你好，世界！</h1>
+                        {subMessageArr}
+                    </div>
+            );
+        }
+    });
+
+    var SubMessageBox = React.createClass({
+        render: function() {
+            return (
+                    <div>
+                        <h3>假如生活欺骗了你，不要悲伤，不要心急</h3>
+                        <Footer />
+                    </div>
+            );
+        }
+    });
+
+    var Footer = React.createClass({
+        render: function() {
+            return (
+                    <small>因为你就容易被生活欺骗，哈哈哈</small>
+            );
+        }
+    });
+
+    ReactDOM.render(
+            <MessageBox />,
+        document.getElementById('app')
+    );
+</script>
+</html>

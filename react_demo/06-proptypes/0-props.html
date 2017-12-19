@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../src/react.min.js"></script>
+    <script src="../src/react-dom.min.js"></script>
+    <script src="../src/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+</body>
+<!--随着用户互动而产生变化的特性-->
+<script type="text/babel">
+    var MessageBox = React.createClass({
+        getInitialState: function () {
+            return {
+                titleMessage: "画",
+                subMessage: [
+                    '远看山有色，',
+                    '近听水无声。',
+                    '春去花还在，',
+                    '人来鸟不惊。'
+                ]
+            }
+        },
+        render: function () {
+            return (
+                <div>
+                    <h1>{this.state.titleMessage}</h1>
+//                    <SubMessageBox message={this.state.subMessage}/>
+                    <SubMessageBox/>
+                </div>
+            )
+        }
+    });
+
+    var SubMessageBox = React.createClass({
+        getDefaultProps: function () {
+            return {
+                message: ["默认的子消息"]
+            };
+        },
+        render: function () {
+            var msgs = [];
+            this.props.message.forEach(function (item, index) {
+                msgs.push(
+                    <p key={"item" + index}>{item}</p>
+                )
+            });
+            return (
+                <div>{msgs}</div>
+            )
+        }
+    });
+
+    ReactDOM.render(
+        <MessageBox/>,
+        document.getElementById("app")
+    )
+</script>
+</html>
