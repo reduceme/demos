@@ -65,6 +65,9 @@
                         <h2 className="commentAuthor">
                             {this.props.author}:
                         </h2>
+                        <p>
+                            {this.props.text}
+                        </p>
                     </div>
             );
         }
@@ -74,11 +77,10 @@
         render: function () {
             var commentNodes = this.props.data.map(function (item) {
                 return (
-                        <Comment author={item.author}>
+                        <Comment author={item.author} text={item.text}>
                         </Comment>
                 )
-            })
-
+            });
             return (
                     <div className="commentList">
                         {commentNodes}
@@ -87,30 +89,72 @@
         }
     });
 
+    //评论表单组件
+    var CommentForm = React.createClass({
+        handleSubmit: function (e) {
+            e.preventDefault();
+            var author = this.refs.author.value.trim();
+            var text = this.refs.text.value.trim();
+            if (!author || !text) {
+                return;
+            }
+            this.props.onCommentSubmit({author: author, text: text});
+            this.refs.author.value = "";
+            this.refs.text.value = "";
+            return;
+        },
+        render: function () {
+            return (
+                    <form className="commentForm" onSubmit={this.handleSubmit}>
+                        <input type="text" placeholder="YOUR NAME" ref="author"/>
+                        <textarea type="text" placeholder="say something" ref="text"/>
+                        <input type="submit" value="Post"/>
+                    </form>
+            );
+        }
+    });
+
     var CommentBox = React.createClass({
-        /*loadCommentsFromServer: function () {
+        loadCommentsFromServer: function () {
             this.setState({data: staticData});
-        },*/
+        },
+        handleCommentSubmit: function (comment) {
+            //TODO: submit to the server and refresh the list
+            var comments = this.state.data;
+            var newComments = comments.concat([comment]);
+
+            staticData = newComments;
+
+            this.setState({data: newComments});
+            console.log(staticData);
+
+            /*this.setState({
+                data: e.target.value
+            });*/
+
+            console.log(this.state.data);
+        },
         //初始化
         getInitialState: function () {
-            return {data: staticData}
+            return {data: []}
         },
         //组件添加时运行
-        /*componentDidMount: function () {
+        componentDidMount: function () {
             this.loadCommentsFromServer();
-        },*/
+        },
         render: function () {
             return (
                     <div className="commentBox">
                         <h1>Comments</h1>
                         <CommentList data={this.state.data}/>
+                        <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
                     </div>
             )
         }
     });
 
     ReactDOM.render(
-            <CommentBox url="comments.json" pollInterval="2000"/>,
+            <CommentBox/>,
         document.getElementById("content")
     );
 </script>
