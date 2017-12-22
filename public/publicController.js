@@ -213,6 +213,7 @@ function pad(num, n){
 	return num;
 }
 
+//ajax的contentType
 function ajax(userInfo){
 	$.ajax({
             method: "post",
@@ -248,3 +249,26 @@ function isChecked(){
 		$(this).attr("checked", false).prop("checked", false);
 	});
 }
+
+/*数组删除指定元素*/
+Array.prototype.removeByValue = function (val) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == val) {
+            this.splice(i, 1);
+            break;
+        }
+    }
+};
+
+//数组去重，写入原型链
+Array.prototype.deWeight = function () {
+    var res = [];
+    var json = {};
+    for (var i = 0; i < this.length; i++) {
+        if (!json[this[i]]) {
+            res.push(this[i]);
+            json[this[i]] = 1;
+        }
+    }
+    return res;
+};
