@@ -229,13 +229,22 @@ function ajax(userInfo){
 
 //字符串分组
 function splitStr(item, string) {
-        var arr = item.split(",");
-        var str = new RegExp(string);
-        var result = [];
-        for (var i = 0; i < arr.length; i++) {
-            if (str.test(arr[i])) {
-                result.push(arr[i]);
-            }
-        }
-        return result;
-    }
+	var arr = item.split(",");
+	var str = new RegExp(string);
+	var result = [];
+	for (var i = 0; i < arr.length; i++) {
+		if (str.test(arr[i])) {
+			result.push(arr[i]);
+		}
+	}
+	return result;
+}
+
+//checkbox取消选中
+//对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
+//对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。
+function isChecked(){
+	$("label input").map(function () {
+		$(this).attr("checked", false).prop("checked", false);
+	});
+}
