@@ -84,7 +84,7 @@ function getRadio(name){
 
 //获取复选框选中的值并返回以“,”隔开的字符串
 function getCheckBox(id){
-	var checkboxVal = $('#'+ id + 'label input[type="checkbox"]:checked').map(function () {
+	var checkboxVal = $('#'+ id + ' label input[type="checkbox"]:checked').map(function () {
         return $(this).val();
     }).get().join(',');
 	
@@ -211,4 +211,18 @@ function pad(num, n){
 		len++;
 	}
 	return num;
+}
+
+function ajax(userInfo){
+	$.ajax({
+            method: "post",
+            url: "/Write/DTP/SetDTPTag",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(userInfo),
+            success: function (data) {
+                if (data.Success) {
+					//do something......
+                }
+            }
+        })
 }
