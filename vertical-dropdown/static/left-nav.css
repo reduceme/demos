@@ -1,0 +1,41 @@
+.fir-jiantou-align {
+    line-height: 40px;
+}
+
+.sec-jiantou-align {
+    line-height: 30px;
+}
+
+.thr-jiantou-align {
+    line-height: 30px;
+}
+
+.nav-left-first {
+    height: 40px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+    line-height: 40px;
+    background: #f3f3f3;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.nav-left-sec {
+    height: 30px;
+    cursor: pointer;
+    border-bottom: 1px solid green;
+    line-height: 30px;
+    background: ghostwhite;
+    padding: 0 30px;
+    font-size: 14px;
+}
+
+.nav-left-thr {
+    height: 30px;
+    cursor: pointer;
+    border-bottom: 1px solid red;
+    line-height: 30px;
+    background: whitesmoke;
+    padding: 0 35px;
+    font-size: 12px;
+}
