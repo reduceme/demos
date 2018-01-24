@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Hero Form</h1>
+  <form #heroForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input [(ngModel)]="model.name" name="name" type="text" id="name" class="form-control" required>
+    </div>
+    TODO: remove this: {{model.name}}
+
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input [(ngModel)]="model.alterEgo" name="alterEgo" type="text" class="form-control" id="alterEgo">
+    </div>
+
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select [(ngModel)]="model.power" name="power" id="power" class="form-control" required>
+        <option *ngFor="let pow of powers" [value]="pow">
+          {{pow}}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
