@@ -228,6 +228,25 @@ function ajax(userInfo){
         })
 }
 
+//formData
+function formData(){
+	var formData = new FormData();
+	formData.append("file", $('#upload').get(0).files[0]);
+	
+	$.ajax({
+		method: 'post',
+		url: '',
+		data: formData,
+		processData: false,  // 不处理数据
+		contentType: false,   // 不设置内容类型
+		success: function (data) {
+			console.log(data);
+		},
+		error: function () {
+		}
+	})
+}
+
 //字符串分组
 function splitStr(item, string) {
 	var arr = item.split(",");
