@@ -1,0 +1,30 @@
+https://my.vultr.com
+按照下边的步骤执行
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python-pip
+1 sudo pip install shadowsocks
+这一步可能会有报错0.8xxx 0.9.xxxx,具体和pip python的版本有关系 具体查看网络说明 
+使用wget安装成功，具体如下：
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python3 get-pip.py
+apt-get install build-essential python-dev
+pip install uwsgi
+
+运行 shadowsocks 服务器
+启动命令如下：如果要停止运行，将命令中的start改成stop。
+1 sudo ssserver -p 8388 -k 123456789 -m rc4-md5 -d start
+8388是端口 password这个删除改为自己的密码 后边这个就用md5也可以，其他方式你网络查一下对应的字符串
+
+
+c+2KwxUwzfjHoSwb
+
+
+
+sudo apt-get update
+sudo apt-get install python-pip
+--pip install -U pip
+--sudo pip install setuptools
+sudo pip install shadowscoks
+sudo sserver -p 8388 -k 8888ye -m ase-256-cfb -d start
+--关闭 start 改为 stop
